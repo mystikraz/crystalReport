@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="21605c8f5d564707ab7aa94dc402586f" Name="Diagram1" ZoomLevel="95">
-        <EntityTypeShape EntityType="CreditcardModel.statement" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CreditcardModel.statement" Width="2" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
