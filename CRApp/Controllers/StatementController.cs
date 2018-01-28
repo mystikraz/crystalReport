@@ -26,7 +26,7 @@ namespace CRApp.Controllers
         public ActionResult Export()
         {
             ReportDocument rd = new ReportDocument();
-            rd.Load(Path.Combine(Server.MapPath("~/Reports/CrystalReport1.rpt")));
+            rd.Load(Path.Combine(Server.MapPath("~/Reports/CrystalReport2.rpt")));
             rd.SetDataSource(entities.statements.Select(s => new
             {
                                 Id = s.Id,
