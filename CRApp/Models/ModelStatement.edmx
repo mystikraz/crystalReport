@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CreditcardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CreditcardModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="statement">
           <Key>
             <PropertyRef Name="Id" />
@@ -20,12 +20,12 @@
           <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
           <Property Name="imagePath" Type="nvarchar" MaxLength="50" />
+          <Property Name="Acnumber" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="CreditcardModelStoreContainer">
           <EntitySet Name="statement" EntityType="Self.statement" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CreditcardModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -44,6 +44,7 @@
           <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="imagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Acnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="CreditCardEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="statements" EntityType="Self.statement" />
@@ -57,6 +58,7 @@
           <EntitySetMapping Name="statements">
             <EntityTypeMapping TypeName="CreditcardModel.statement">
               <MappingFragment StoreEntitySet="statement">
+                <ScalarProperty Name="Acnumber" ColumnName="Acnumber" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
                 <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />

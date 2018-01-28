@@ -25,5 +25,6 @@ namespace CRApp.Models
         public string CustomerName { get; set; }
         public string Address { get; set; }
         public string imagePath { get; set; }
+        public string Acnumber { get; set; }
     }
 }

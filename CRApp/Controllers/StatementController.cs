@@ -25,6 +25,10 @@ namespace CRApp.Controllers
 
         public ActionResult Export()
         {
+            var query = entities.statements.Select(s => s.Acnumber).FirstOrDefault();
+
+
+            string pwd = GeneratePassword(query);
             ReportDocument rd = new ReportDocument();
             rd.Load(Path.Combine(Server.MapPath("~/Reports/CrystalReport2.rpt")));
             rd.SetDataSource(entities.statements.Select(s => new
@@ -56,7 +60,7 @@ namespace CRApp.Controllers
             using (t_Output = new FileStream("C:\\img\\" + "test_encrypted.pdf", FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 iTextSharp.text.pdf.PdfReader t_Reader = new iTextSharp.text.pdf.PdfReader(t_Input);
-                iTextSharp.text.pdf.PdfEncryptor.Encrypt(t_Reader, t_Output, true, "123", "test", iTextSharp.text.pdf.PdfWriter.ALLOW_PRINTING);
+                iTextSharp.text.pdf.PdfEncryptor.Encrypt(t_Reader, t_Output, true, pwd, pwd, iTextSharp.text.pdf.PdfWriter.ALLOW_PRINTING);
             }
 
             //return File("C:\\img\\" + "test_encrypted.pdf", "application/pdf", "ListStatement.pdf");
@@ -106,6 +110,12 @@ namespace CRApp.Controllers
 
 
 
+        }
+
+        public string GeneratePassword(string AccountNumber)
+        {
+            string password = AccountNumber.Substring(4, 8);
+            return password;
         }
 
         

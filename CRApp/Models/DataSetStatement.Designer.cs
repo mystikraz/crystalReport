@@ -301,6 +301,8 @@ namespace CRApp.Models {
             
             private global::System.Data.DataColumn columnimagePath;
             
+            private global::System.Data.DataColumn columnAcnumber;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public statementDataTable() {
@@ -424,6 +426,14 @@ namespace CRApp.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AcnumberColumn {
+                get {
+                    return this.columnAcnumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -459,7 +469,7 @@ namespace CRApp.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public statementRow AddstatementRow(System.DateTime TransactionDate, System.DateTime PostedDate, string DescriptionOfTransactions, decimal TransactionsAmount, decimal BilledAmount, string DRCR, string CardNumber, string CustomerName, string Address, string imagePath) {
+            public statementRow AddstatementRow(System.DateTime TransactionDate, System.DateTime PostedDate, string DescriptionOfTransactions, decimal TransactionsAmount, decimal BilledAmount, string DRCR, string CardNumber, string CustomerName, string Address, string imagePath, string Acnumber) {
                 statementRow rowstatementRow = ((statementRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -472,7 +482,8 @@ namespace CRApp.Models {
                         CardNumber,
                         CustomerName,
                         Address,
-                        imagePath};
+                        imagePath,
+                        Acnumber};
                 rowstatementRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstatementRow);
                 return rowstatementRow;
@@ -513,6 +524,7 @@ namespace CRApp.Models {
                 this.columnCustomerName = base.Columns["CustomerName"];
                 this.columnAddress = base.Columns["Address"];
                 this.columnimagePath = base.Columns["imagePath"];
+                this.columnAcnumber = base.Columns["Acnumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -540,6 +552,8 @@ namespace CRApp.Models {
                 base.Columns.Add(this.columnAddress);
                 this.columnimagePath = new global::System.Data.DataColumn("imagePath", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimagePath);
+                this.columnAcnumber = new global::System.Data.DataColumn("Acnumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAcnumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -843,6 +857,22 @@ namespace CRApp.Models {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Acnumber {
+                get {
+                    try {
+                        return ((string)(this[this.tablestatement.AcnumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Acnumber\' in table \'statement\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestatement.AcnumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCardNumberNull() {
                 return this.IsNull(this.tablestatement.CardNumberColumn);
             }
@@ -887,6 +917,18 @@ namespace CRApp.Models {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetimagePathNull() {
                 this[this.tablestatement.imagePathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAcnumberNull() {
+                return this.IsNull(this.tablestatement.AcnumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAcnumberNull() {
+                this[this.tablestatement.AcnumberColumn] = global::System.Convert.DBNull;
             }
         }
         

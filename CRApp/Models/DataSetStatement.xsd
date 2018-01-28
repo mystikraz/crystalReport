@@ -14,7 +14,7 @@
   <xs:element name="DataSetStatement" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetStatement" msprop:Generator_UserDSName="DataSetStatement">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="statement" msprop:Generator_TableClassName="statementDataTable" msprop:Generator_TableVarName="tablestatement" msprop:Generator_TablePropName="statement" msprop:Generator_RowDeletingName="statementRowDeleting" msprop:Generator_RowChangingName="statementRowChanging" msprop:Generator_RowEvHandlerName="statementRowChangeEventHandler" msprop:Generator_RowDeletedName="statementRowDeleted" msprop:Generator_UserTableName="statement" msprop:Generator_RowChangedName="statementRowChanged" msprop:Generator_RowEvArgName="statementRowChangeEvent" msprop:Generator_RowClassName="statementRow">
+        <xs:element name="statement" msprop:Generator_TableClassName="statementDataTable" msprop:Generator_TableVarName="tablestatement" msprop:Generator_RowChangedName="statementRowChanged" msprop:Generator_TablePropName="statement" msprop:Generator_RowDeletingName="statementRowDeleting" msprop:Generator_RowChangingName="statementRowChanging" msprop:Generator_RowEvHandlerName="statementRowChangeEventHandler" msprop:Generator_RowDeletedName="statementRowDeleted" msprop:Generator_RowClassName="statementRow" msprop:Generator_UserTableName="statement" msprop:Generator_RowEvArgName="statementRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -64,6 +64,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Acnumber" msprop:Generator_ColumnVarNameInTable="columnAcnumber" msprop:Generator_ColumnPropNameInRow="Acnumber" msprop:Generator_ColumnPropNameInTable="AcnumberColumn" msprop:Generator_UserColumnName="Acnumber" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
